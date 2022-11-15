@@ -20,9 +20,14 @@ public class VkResponseParser {
         JsonNode root = null;
         try {
 
+            System.out.println(groupIsMemberResponse);
             root = readResponse(userGetResponse).get(0);
 
-            builder.firstName(root.path("first_name").asText())
+            String firstName = root.path("first_name").asText();
+            if (firstName.equals("DELETED"))
+                throw new VkException("User is either not created or deleted");
+
+            builder.firstName(firstName)
                     .middleName(root.path("nickname").asText())
                     .lastName(root.path("last_name").asText());
 
