@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.camel.FluentProducerTemplate;
 import org.itmo.dto.UserGroupDto;
 import org.itmo.utils.VkResponseParser;
-import org.itmo.utils.exceptions.VkException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
