@@ -20,7 +20,6 @@ public class VkResponseParser {
         JsonNode root = null;
         try {
 
-            System.out.println(groupIsMemberResponse);
             root = readResponse(userGetResponse).get(0);
 
             String firstName = root.path("first_name").asText();
